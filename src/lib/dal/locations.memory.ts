@@ -1,4 +1,4 @@
-import { Location } from "../schemas/location";
+import { Location, ContentBlock } from "../schemas/location";
 
 let data: Location[] = [
   {
@@ -25,12 +25,13 @@ let data: Location[] = [
   },
 ];
 
-// ✅ notice both functions are exported
+// ✅ Return all locations for a given campaign
 export async function listLocations(campaignId: string) {
   await new Promise((r) => setTimeout(r, 100));
   return data.filter((l) => l.campaignId === campaignId);
 }
 
+// ✅ Create a new location
 export async function createLocation(input: {
   campaignId: string;
   name: string;
@@ -47,4 +48,19 @@ export async function createLocation(input: {
   };
   data.push(loc);
   return loc;
+}
+
+// ✅ Add a note to a location
+export async function addLocationNote(input: {
+  locationId: string;
+  note: ContentBlock;
+}) {
+  await new Promise((r) => setTimeout(r, 100));
+
+  const loc = data.find((l) => l.id === input.locationId);
+  if (!loc) throw new Error("Location not found");
+
+  loc.notes.push(input.note);
+  loc.updatedAt = new Date().toISOString();
+  return input.note;
 }

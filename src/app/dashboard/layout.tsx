@@ -1,9 +1,13 @@
 import type { ReactNode } from "react";
 import { AppTopNav } from "@/components/app-topnav";
 import { AppSidebar } from "@/components/app-sidebar";
+import { ViewerProvider } from "@/components/viewer-context";
+
+
 
 export default function DashboardLayout({ children }: { children: ReactNode }) {
   return (
+    <ViewerProvider>
     <div className="min-h-dvh bg-slate-50">
       <AppTopNav />
       <div className="mx-auto flex max-w-7xl gap-0 md:gap-6 px-2 md:px-4">
@@ -13,5 +17,6 @@ export default function DashboardLayout({ children }: { children: ReactNode }) {
         </main>
       </div>
     </div>
+    </ViewerProvider>
   );
 }

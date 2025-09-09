@@ -1,5 +1,9 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+Notes from 09/08/2025
+
+Trying to get the DM/PC view updated. Stuck on this problem right now (GPT Froze) I will pick up again tomorrow night or Wednesday. If you work on it I would upload all the files you can (especially in the SRC) so that GPT knows the full context otherwise it will make mistakes. 
+
 ## Getting Started
 
 First, run the development server:
